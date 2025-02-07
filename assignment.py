@@ -17,3 +17,7 @@ class SignalDetection:
    
     def false_alarm_rate(self):
         """Calculate flase alarm rate (FA)"""
+        total_noises = self.false_alarms + self.correct_rejections
+        FA = self.false_alarms / total_noises if total_noises > 0 else 0.0001
+        return min(max(FA, 0.0001), 0.9999) 
+    
