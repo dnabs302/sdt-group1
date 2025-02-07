@@ -21,3 +21,7 @@ class SignalDetection:
         total_signals = self.hits + self.misses
         H = self.hits / total_signals if total_signals > 0 else 0.0001
         return min(max(H, 0.0001), 0.9999)
+   
+    def false_alarm_rate(self):
+        """Calculate flase alarm rate (FA)"""
+        
