@@ -14,7 +14,7 @@ class SignalDetection:
         self.correct_rejections = correct_rejections
    
     def hit_rate(self): 
-        """Calculate hit rate (H) """
+        """Calculate hit rate (H)"""
         total_signals = self.hits + self.misses
         H = self.hits / total_signals if total_signals > 0 else 0.0001
         return min(max(H, 0.0001), 0.9999)
